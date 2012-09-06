@@ -1,0 +1,65 @@
+<style>
+ 
+    *{font: 12px/1.5 arial;}
+ 
+    input{border:1px solid #aaa;padding-left:5px;line-height :24px;height:24px;}
+ 
+    span{cursor:pointer;color:#FF6600;}
+ 
+    span.ed{color:#ccc &bnp;}
+ 
+</style>
+ 
+<body>
+
+    <input type="text" id="opinion" size="40"  style="width:200px;height:66px;vertical-align:middle;line-height:58px" />
+
+    <div id="tags">
+ 
+        <span>发布</span>
+ 
+        <span>内容</span>
+ 
+        <span>发表</span>
+ 
+    </div>
+ 
+</body>
+ 
+<script>
+ 
+function fx(tags,shower){
+ 
+    for(var i=tags.length,list=[];i--;)
+ 
+        tags[i].onclick=function (){
+ 
+            for(var i=0,del,tag=this.innerHTML,l=list.length;i<l;i++){
+ 
+                if(list[i]!=tag)continue;
+ 
+                del=list.splice(i,1);
+ 
+                break;
+ 
+            };
+ 
+            if(!del)list.push(tag);
+ 
+            this.className=del?'':'ed';
+ 
+             shower.value = list 
+ 
+        }
+ 
+};
+ 
+fx(
+ 
+    document.getElementById('tags').getElementsByTagName('span'),
+ 
+    document.getElementById('opinion')
+ 
+)
+ 
+</script>

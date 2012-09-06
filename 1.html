@@ -1,0 +1,77 @@
+<!DOCTYPE html public "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ 
+<html xmlns="http://www.w3.org/1999/xhtml">
+ 
+<head>
+ 
+        <meta http-equiv="Content-Type" content="text/html; charset=gbk" />
+ 
+        <title>Simple xhtml page</title>
+ 
+        <style>
+ 
+                div{height: 2em;}
+ 
+                div span{margin: 2px; background: #ffc; font-size: 12px; padding: 2px; border-width: 0 1px 1px 0; border-style: solid; border-color: #999; cursor: pointer; color: #000;}
+ 
+        </style>
+ 
+<script type="text/javascript">
+ 
+<!--
+ 
+        function register(){
+ 
+                var els = document.getElementById("src").getElementsByTagName("span");
+ 
+                for(var el in els){els[el].onclick = clickHandler;}
+ 
+        }
+ 
+        function clickHandler(){
+ 
+                var dest = document.getElementById("dest");
+ 
+                if(this.getAttribute("fontDisabled")){
+ 
+                        this.removeAttribute("fontDisabled");
+ 
+                        this.style.color="#000";
+ 
+                        dest.value = (dest.value+" ").replace(this.innerHTML+" ", "").replace(/^\s+|\s+$/g, "");
+ 
+                }else{
+ 
+                        this.setAttribute("fontDisabled", true);
+ 
+                        this.style.color="#999";
+ 
+                        dest.value = dest.value?dest.value+" "+this.innerHTML:this.innerHTML;
+ 
+                }
+ 
+        }
+ 
+        window.onload=function(){register();};
+ 
+//-->
+ 
+</script>
+ 
+</head>
+ 
+<body>
+ 
+<input id="dest" size="80" />
+ 
+<div id="src">
+ 
+<span>十月围城</span><span>香港</span><span>动作</span><span>历史</span><span>2009</span>
+ 
+<span>剧情</span><span>感人</span><span>我的2009十佳</span><span>内地</span><span>史诗</span>
+ 
+</div>
+ 
+</body>
+ 
+</html>
